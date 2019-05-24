@@ -37,12 +37,12 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="sip-dd-1Jj"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ0-1w-9ST">
-                                            <rect key="frame" x="88" y="35" width="271" height="18"/>
+                                            <rect key="frame" x="88" y="38" width="271" height="18"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="18" id="CdL-4X-Trl"/>
                                             </constraints>
@@ -71,8 +71,7 @@
                                         <constraint firstItem="Qtg-Qd-7e7" firstAttribute="trailing" secondItem="gYd-TM-fdC" secondAttribute="trailingMargin" id="WKy-KL-Vxw"/>
                                         <constraint firstItem="BhO-fx-IKX" firstAttribute="leading" secondItem="gYd-TM-fdC" secondAttribute="leading" constant="15" id="bF7-mS-3u7"/>
                                         <constraint firstItem="Qtg-Qd-7e7" firstAttribute="leading" secondItem="BhO-fx-IKX" secondAttribute="trailing" constant="8" id="gWs-Ge-bQY"/>
-                                        <constraint firstItem="yQ0-1w-9ST" firstAttribute="top" secondItem="v0O-KJ-DHf" secondAttribute="bottom" constant="3" id="hDM-XI-Ley"/>
-                                        <constraint firstItem="Qtg-Qd-7e7" firstAttribute="top" secondItem="yQ0-1w-9ST" secondAttribute="bottom" id="rrf-WZ-BQ9"/>
+                                        <constraint firstItem="yQ0-1w-9ST" firstAttribute="top" secondItem="v0O-KJ-DHf" secondAttribute="bottom" constant="6" id="hDM-XI-Ley"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>

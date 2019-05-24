@@ -13,6 +13,7 @@
 		C4FEA2D8229652CC00DAC0AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FEA2D6229652CC00DAC0AD /* LaunchScreen.storyboard */; };
 		C4FEA2E22296534200DAC0AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2E12296534200DAC0AD /* MainViewController.swift */; };
 		C4FEA2E422980AA200DAC0AD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2E322980AA200DAC0AD /* CustomTableViewCell.swift */; };
+		C4FEA2E62298300200DAC0AD /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2E52298300200DAC0AD /* PlaceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C4FEA2D9229652CC00DAC0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4FEA2E12296534200DAC0AD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C4FEA2E322980AA200DAC0AD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		C4FEA2E52298300200DAC0AD /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */,
 				C4FEA2E12296534200DAC0AD /* MainViewController.swift */,
+				C4FEA2E52298300200DAC0AD /* PlaceModel.swift */,
 				C4FEA2E322980AA200DAC0AD /* CustomTableViewCell.swift */,
 				C4FEA2D1229652CA00DAC0AD /* Main.storyboard */,
 				C4FEA2D4229652CC00DAC0AD /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4FEA2E422980AA200DAC0AD /* CustomTableViewCell.swift in Sources */,
+				C4FEA2E62298300200DAC0AD /* PlaceModel.swift in Sources */,
 				C4FEA2CE229652CA00DAC0AD /* AppDelegate.swift in Sources */,
 				C4FEA2E22296534200DAC0AD /* MainViewController.swift in Sources */,
 			);
