@@ -32,46 +32,37 @@
                                                 <constraint firstAttribute="height" constant="65" id="ZJb-ms-uJR"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0O-KJ-DHf">
-                                            <rect key="frame" x="88" y="11" width="271" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="sip-dd-1Jj"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ0-1w-9ST">
-                                            <rect key="frame" x="88" y="38" width="271" height="18"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="18" id="CdL-4X-Trl"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtg-Qd-7e7">
-                                            <rect key="frame" x="88" y="53" width="271" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="cg7-Nw-QUb"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="3cX-Jp-p6U">
+                                            <rect key="frame" x="96" y="10" width="263" height="65.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0O-KJ-DHf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="263" height="27.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQ0-1w-9ST">
+                                                    <rect key="frame" x="0.0" y="27.5" width="263" height="22"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qtg-Qd-7e7">
+                                                    <rect key="frame" x="0.0" y="49.5" width="263" height="16"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="v0O-KJ-DHf" firstAttribute="top" secondItem="gYd-TM-fdC" secondAttribute="topMargin" id="43Q-IR-Wcp"/>
-                                        <constraint firstItem="Qtg-Qd-7e7" firstAttribute="bottom" secondItem="gYd-TM-fdC" secondAttribute="bottomMargin" id="4hL-aJ-S5b"/>
-                                        <constraint firstItem="v0O-KJ-DHf" firstAttribute="leading" secondItem="BhO-fx-IKX" secondAttribute="trailing" constant="8" id="Bs8-fj-yVL"/>
-                                        <constraint firstItem="yQ0-1w-9ST" firstAttribute="leading" secondItem="BhO-fx-IKX" secondAttribute="trailing" constant="8" id="Btq-vs-NAd"/>
-                                        <constraint firstItem="yQ0-1w-9ST" firstAttribute="trailing" secondItem="gYd-TM-fdC" secondAttribute="trailingMargin" id="HGV-iM-pwX"/>
-                                        <constraint firstItem="v0O-KJ-DHf" firstAttribute="trailing" secondItem="gYd-TM-fdC" secondAttribute="trailingMargin" id="Ikn-mX-bt1"/>
+                                        <constraint firstItem="3cX-Jp-p6U" firstAttribute="leading" secondItem="BhO-fx-IKX" secondAttribute="trailing" constant="16" id="8q6-FQ-9FP"/>
+                                        <constraint firstAttribute="bottom" secondItem="3cX-Jp-p6U" secondAttribute="bottom" constant="9" id="GQ5-rR-5Mu"/>
                                         <constraint firstItem="BhO-fx-IKX" firstAttribute="centerY" secondItem="gYd-TM-fdC" secondAttribute="centerY" id="MOo-Iq-DAG"/>
-                                        <constraint firstItem="Qtg-Qd-7e7" firstAttribute="trailing" secondItem="gYd-TM-fdC" secondAttribute="trailingMargin" id="WKy-KL-Vxw"/>
                                         <constraint firstItem="BhO-fx-IKX" firstAttribute="leading" secondItem="gYd-TM-fdC" secondAttribute="leading" constant="15" id="bF7-mS-3u7"/>
-                                        <constraint firstItem="Qtg-Qd-7e7" firstAttribute="leading" secondItem="BhO-fx-IKX" secondAttribute="trailing" constant="8" id="gWs-Ge-bQY"/>
-                                        <constraint firstItem="yQ0-1w-9ST" firstAttribute="top" secondItem="v0O-KJ-DHf" secondAttribute="bottom" constant="6" id="hDM-XI-Ley"/>
+                                        <constraint firstAttribute="trailing" secondItem="3cX-Jp-p6U" secondAttribute="trailing" constant="16" id="ci8-cV-LtM"/>
+                                        <constraint firstItem="3cX-Jp-p6U" firstAttribute="top" secondItem="gYd-TM-fdC" secondAttribute="top" constant="10" id="lhL-ZI-9d9"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -262,13 +253,21 @@
                     <navigationItem key="navigationItem" title="New Place" id="EGy-xU-lFP">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gb1-Kb-Rpb">
                             <connections>
-                                <segue destination="shz-sZ-U5Y" kind="unwind" unwindAction="cancelAction:" id="Hzl-B4-MmM"/>
+                                <action selector="cancelButton:" destination="qM1-i1-jSt" id="Fif-GD-J86"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="YHM-WL-kkK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="YHM-WL-kkK">
+                            <connections>
+                                <segue destination="shz-sZ-U5Y" kind="unwind" unwindAction="unwindSegue:" id="Wwb-mh-TIz"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageOfPlace" destination="3Ve-i9-QNE" id="3te-84-ETn"/>
+                        <outlet property="placeImage" destination="3Ve-i9-QNE" id="3te-84-ETn"/>
+                        <outlet property="placeLocation" destination="62u-Qh-huM" id="OqD-JI-Zey"/>
+                        <outlet property="placeName" destination="yMj-Q8-J1d" id="gqU-u5-c3B"/>
+                        <outlet property="placeType" destination="o4k-NL-Iny" id="COI-FG-nb0"/>
+                        <outlet property="saveButton" destination="YHM-WL-kkK" id="VBE-nE-BRz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8EK-xr-a77" userLabel="First Responder" sceneMemberID="firstResponder"/>

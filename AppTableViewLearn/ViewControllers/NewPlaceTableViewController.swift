@@ -10,12 +10,29 @@ import UIKit
 
 class NewPlaceTableViewController: UITableViewController {
     
-    @IBOutlet weak var imageOfPlace: UIImageView!
+    var newPlace: Place?
+    var imageIsChenged = false
+    
+    @IBOutlet weak var placeImage: UIImageView!
+    @IBOutlet weak var placeName: UITextField!
+    @IBOutlet weak var placeLocation: UITextField!
+    @IBOutlet weak var placeType: UITextField!
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.tableFooterView = UIView()
+        
+        saveButton.isEnabled = false
+        placeName.addTarget(self, action: #selector(textFieldChenged), for: .editingChanged)
+        
+    }
+    
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
+        
+        dismiss(animated: true)
         
     }
     
@@ -25,6 +42,9 @@ class NewPlaceTableViewController: UITableViewController {
         
         if indexPath.row == 0 {
             
+            let cameraImage = #imageLiteral(resourceName: "camera")
+            let photoImage = #imageLiteral(resourceName: "photo")
+            
             let acrionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
             
             let camera = UIAlertAction(title: "Camera", style: .default) { _ in
@@ -33,11 +53,17 @@ class NewPlaceTableViewController: UITableViewController {
                 
             }
             
+            camera.setValue(cameraImage, forKey: "image")
+            camera.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
+            
             let photoLibery = UIAlertAction(title: "Photo", style: .default) { _ in
                 
                 self.chooseImagePicker(sourse: .photoLibrary)
                 
             }
+            
+            photoLibery.setValue(photoImage, forKey: "image")
+            photoLibery.setValue(CATextLayerAlignmentMode.left, forKey: "titleTextAlignment")
             
             let cancel = UIAlertAction(title: "Cancel", style: .cancel)
             
@@ -54,6 +80,24 @@ class NewPlaceTableViewController: UITableViewController {
         }
         
     }
+    
+    func saveNewPlaces() {
+        
+        var image: UIImage
+        
+        if imageIsChenged {
+            
+            image = placeImage.image!
+            
+        } else {
+            
+            image = #imageLiteral(resourceName: "imagePlaceholder")
+            
+        }
+        
+        newPlace = Place(name: placeName.text!, location: placeLocation.text, type: placeType.text, image: image, refactorImage: nil)
+        
+    }
 
 }
 
@@ -66,6 +110,20 @@ extension NewPlaceTableViewController: UITextFieldDelegate {
         textField.resignFirstResponder()
         
         return true
+        
+    }
+    
+    @objc private func textFieldChenged() {
+        
+        if placeName.text?.isEmpty == false {
+            
+            saveButton.isEnabled = true
+            
+        } else {
+            
+            saveButton.isEnabled = false
+            
+        }
         
     }
     
@@ -89,9 +147,12 @@ extension NewPlaceTableViewController: UIImagePickerControllerDelegate, UINaviga
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        imageOfPlace.image = info[.editedImage] as? UIImage
-        imageOfPlace.contentMode = .scaleAspectFill
-        imageOfPlace.clipsToBounds = true
+        placeImage.image = info[.editedImage] as? UIImage
+        placeImage.contentMode = .scaleAspectFill
+        
+        imageIsChenged = true
+        
+        placeImage.clipsToBounds = true
         dismiss(animated: true)
         
     }

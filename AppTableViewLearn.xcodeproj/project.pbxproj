@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7ECBF2485B60B6FE03032382 /* Pods_AppTableViewLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2F1BE3D9F1DBEE8F40CFA2 /* Pods_AppTableViewLearn.framework */; };
 		C4FEA2CE229652CA00DAC0AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */; };
 		C4FEA2D3229652CA00DAC0AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FEA2D1229652CA00DAC0AD /* Main.storyboard */; };
 		C4FEA2D5229652CC00DAC0AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4FEA2D4229652CC00DAC0AD /* Assets.xcassets */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3BF41881576F3C84EBF7F373 /* Pods-AppTableViewLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTableViewLearn.debug.xcconfig"; path = "Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn.debug.xcconfig"; sourceTree = "<group>"; };
+		B2C98A230661A1C657905AE4 /* Pods-AppTableViewLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTableViewLearn.release.xcconfig"; path = "Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn.release.xcconfig"; sourceTree = "<group>"; };
 		C4FEA2CA229652CA00DAC0AD /* AppTableViewLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTableViewLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4FEA2D2229652CA00DAC0AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +31,7 @@
 		C4FEA2E322980AA200DAC0AD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C4FEA2E52298300200DAC0AD /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		C4FEA2EA229843FB00DAC0AD /* NewPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTableViewController.swift; sourceTree = "<group>"; };
+		CF2F1BE3D9F1DBEE8F40CFA2 /* Pods_AppTableViewLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppTableViewLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +39,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ECBF2485B60B6FE03032382 /* Pods_AppTableViewLearn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		287E39488966FC194D0175DD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3BF41881576F3C84EBF7F373 /* Pods-AppTableViewLearn.debug.xcconfig */,
+				B2C98A230661A1C657905AE4 /* Pods-AppTableViewLearn.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9AF2DEBD79CCC36BA2235126 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF2F1BE3D9F1DBEE8F40CFA2 /* Pods_AppTableViewLearn.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C4FEA2C1229652CA00DAC0AD = {
 			isa = PBXGroup;
 			children = (
 				C4FEA2CC229652CA00DAC0AD /* AppTableViewLearn */,
 				C4FEA2CB229652CA00DAC0AD /* Products */,
+				287E39488966FC194D0175DD /* Pods */,
+				9AF2DEBD79CCC36BA2235126 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -104,9 +129,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4FEA2DC229652CC00DAC0AD /* Build configuration list for PBXNativeTarget "AppTableViewLearn" */;
 			buildPhases = (
+				51C5EDCD190DC71736677E21 /* [CP] Check Pods Manifest.lock */,
 				C4FEA2C6229652CA00DAC0AD /* Sources */,
 				C4FEA2C7229652CA00DAC0AD /* Frameworks */,
 				C4FEA2C8229652CA00DAC0AD /* Resources */,
+				45BA27DE04C589E4437DDDCD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,6 +189,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45BA27DE04C589E4437DDDCD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51C5EDCD190DC71736677E21 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppTableViewLearn-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C4FEA2C6229652CA00DAC0AD /* Sources */ = {
@@ -316,6 +392,7 @@
 		};
 		C4FEA2DD229652CC00DAC0AD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BF41881576F3C84EBF7F373 /* Pods-AppTableViewLearn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -334,6 +411,7 @@
 		};
 		C4FEA2DE229652CC00DAC0AD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2C98A230661A1C657905AE4 /* Pods-AppTableViewLearn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
