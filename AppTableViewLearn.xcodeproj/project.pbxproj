@@ -23,7 +23,6 @@
 		3BF41881576F3C84EBF7F373 /* Pods-AppTableViewLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTableViewLearn.debug.xcconfig"; path = "Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		B2C98A230661A1C657905AE4 /* Pods-AppTableViewLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTableViewLearn.release.xcconfig"; path = "Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn.release.xcconfig"; sourceTree = "<group>"; };
 		C4484E3222F08629004D8C5E /* StateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewController.swift; sourceTree = "<group>"; };
-		C4E69BD222EDD3C300F4F228 /* AppTableViewLearn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppTableViewLearn.entitlements; sourceTree = "<group>"; };
 		C4FEA2CA229652CA00DAC0AD /* AppTableViewLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTableViewLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4FEA2D2229652CA00DAC0AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,7 +103,6 @@
 		C4FEA2CC229652CA00DAC0AD /* AppTableViewLearn */ = {
 			isa = PBXGroup;
 			children = (
-				C4E69BD222EDD3C300F4F228 /* AppTableViewLearn.entitlements */,
 				C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */,
 				C4FEA2E9229843DE00DAC0AD /* ViewControllers */,
 				C4FEA2E7229839F200DAC0AD /* Model */,
