@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7ECBF2485B60B6FE03032382 /* Pods_AppTableViewLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2F1BE3D9F1DBEE8F40CFA2 /* Pods_AppTableViewLearn.framework */; };
+		C4484E3322F08629004D8C5E /* StateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4484E3222F08629004D8C5E /* StateViewController.swift */; };
 		C4FEA2CE229652CA00DAC0AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */; };
 		C4FEA2D3229652CA00DAC0AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FEA2D1229652CA00DAC0AD /* Main.storyboard */; };
 		C4FEA2D5229652CC00DAC0AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4FEA2D4229652CC00DAC0AD /* Assets.xcassets */; };
@@ -16,11 +16,14 @@
 		C4FEA2E422980AA200DAC0AD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2E322980AA200DAC0AD /* CustomTableViewCell.swift */; };
 		C4FEA2E62298300200DAC0AD /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2E52298300200DAC0AD /* PlaceModel.swift */; };
 		C4FEA2EB229843FB00DAC0AD /* NewPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2EA229843FB00DAC0AD /* NewPlaceTableViewController.swift */; };
+		C4FEA2ED2298F8EB00DAC0AD /* StorageMeneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2EC2298F8EB00DAC0AD /* StorageMeneger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3BF41881576F3C84EBF7F373 /* Pods-AppTableViewLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTableViewLearn.debug.xcconfig"; path = "Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		B2C98A230661A1C657905AE4 /* Pods-AppTableViewLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTableViewLearn.release.xcconfig"; path = "Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn.release.xcconfig"; sourceTree = "<group>"; };
+		C4484E3222F08629004D8C5E /* StateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewController.swift; sourceTree = "<group>"; };
+		C4E69BD222EDD3C300F4F228 /* AppTableViewLearn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppTableViewLearn.entitlements; sourceTree = "<group>"; };
 		C4FEA2CA229652CA00DAC0AD /* AppTableViewLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTableViewLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4FEA2D2229652CA00DAC0AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -31,6 +34,7 @@
 		C4FEA2E322980AA200DAC0AD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C4FEA2E52298300200DAC0AD /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		C4FEA2EA229843FB00DAC0AD /* NewPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTableViewController.swift; sourceTree = "<group>"; };
+		C4FEA2EC2298F8EB00DAC0AD /* StorageMeneger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageMeneger.swift; sourceTree = "<group>"; };
 		CF2F1BE3D9F1DBEE8F40CFA2 /* Pods_AppTableViewLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppTableViewLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -39,7 +43,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7ECBF2485B60B6FE03032382 /* Pods_AppTableViewLearn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,7 +55,6 @@
 				3BF41881576F3C84EBF7F373 /* Pods-AppTableViewLearn.debug.xcconfig */,
 				B2C98A230661A1C657905AE4 /* Pods-AppTableViewLearn.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -62,6 +64,23 @@
 				CF2F1BE3D9F1DBEE8F40CFA2 /* Pods_AppTableViewLearn.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C4484E3022F085FD004D8C5E /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				C4FEA2E12296534200DAC0AD /* MainViewController.swift */,
+				C4FEA2EA229843FB00DAC0AD /* NewPlaceTableViewController.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		C4484E3122F08607004D8C5E /* State */ = {
+			isa = PBXGroup;
+			children = (
+				C4484E3222F08629004D8C5E /* StateViewController.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 		C4FEA2C1229652CA00DAC0AD = {
@@ -85,6 +104,7 @@
 		C4FEA2CC229652CA00DAC0AD /* AppTableViewLearn */ = {
 			isa = PBXGroup;
 			children = (
+				C4E69BD222EDD3C300F4F228 /* AppTableViewLearn.entitlements */,
 				C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */,
 				C4FEA2E9229843DE00DAC0AD /* ViewControllers */,
 				C4FEA2E7229839F200DAC0AD /* Model */,
@@ -101,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				C4FEA2E52298300200DAC0AD /* PlaceModel.swift */,
+				C4FEA2EC2298F8EB00DAC0AD /* StorageMeneger.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -116,8 +137,8 @@
 		C4FEA2E9229843DE00DAC0AD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				C4FEA2E12296534200DAC0AD /* MainViewController.swift */,
-				C4FEA2EA229843FB00DAC0AD /* NewPlaceTableViewController.swift */,
+				C4484E3122F08607004D8C5E /* State */,
+				C4484E3022F085FD004D8C5E /* Orders */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -156,6 +177,11 @@
 				TargetAttributes = {
 					C4FEA2C9229652CA00DAC0AD = {
 						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -248,7 +274,9 @@
 				C4FEA2E62298300200DAC0AD /* PlaceModel.swift in Sources */,
 				C4FEA2CE229652CA00DAC0AD /* AppDelegate.swift in Sources */,
 				C4FEA2E22296534200DAC0AD /* MainViewController.swift in Sources */,
+				C4484E3322F08629004D8C5E /* StateViewController.swift in Sources */,
 				C4FEA2EB229843FB00DAC0AD /* NewPlaceTableViewController.swift in Sources */,
+				C4FEA2ED2298F8EB00DAC0AD /* StorageMeneger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,15 +423,18 @@
 			baseConfigurationReference = 3BF41881576F3C84EBF7F373 /* Pods-AppTableViewLearn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KP4A68PJ98;
 				INFOPLIST_FILE = AppTableViewLearn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = izzyumkim.AppTableViewLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -414,15 +445,18 @@
 			baseConfigurationReference = B2C98A230661A1C657905AE4 /* Pods-AppTableViewLearn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KP4A68PJ98;
 				INFOPLIST_FILE = AppTableViewLearn/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = izzyumkim.AppTableViewLearn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

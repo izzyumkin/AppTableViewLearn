@@ -43,9 +43,8 @@
       "scale" : "3x"
     },
     {
-      "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Icon-App-60x60@2x.png",
+      "size" : "60x60",
       "scale" : "2x"
     },
     {
@@ -79,9 +78,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "Icon-App-40x40@1x.png",
+      "size" : "40x40",
       "scale" : "1x"
     },
     {
@@ -109,9 +107,8 @@
       "scale" : "2x"
     },
     {
-      "size" : "1024x1024",
       "idiom" : "ios-marketing",
-      "filename" : "ItunesArtwork@2x.png",
+      "size" : "1024x1024",
       "scale" : "1x"
     }
   ],
