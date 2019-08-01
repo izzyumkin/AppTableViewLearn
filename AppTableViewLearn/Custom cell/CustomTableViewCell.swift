@@ -10,9 +10,12 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var imageOfPlace: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var statusView: UIView!
+    @IBOutlet weak var orderName: UILabel!
+    @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var orderNumber: UILabel!
+    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var orderPrice: UILabel!
+    @IBOutlet weak var orderDate: UILabel!
     
 }

@@ -11,13 +11,13 @@ import RealmSwift
 
 class MainViewController: UITableViewController {
     
-    var places: Results<Place>!
+    var orders: Results<Order>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         decorateTabBar()
         
-        places = realm.objects(Place.self)
+        orders = realm.objects(Order.self)
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         
     }
@@ -36,7 +36,7 @@ class MainViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return places.isEmpty ? 0 : places.count
+        return orders.isEmpty ? 0 : orders.count
 
     }
 
@@ -44,15 +44,14 @@ class MainViewController: UITableViewController {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
-        let place = places[indexPath.row]
+        let order = orders[indexPath.row]
 
-        cell.nameLabel.text = place.name
-        cell.locationLabel.text = place.location
-        cell.typeLabel.text = place.type
-        cell.imageOfPlace.image = UIImage(data: place.imageData!)
-
-        cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.height / 2
-        cell.imageOfPlace.clipsToBounds = true
+        cell.orderName.text = order.coverName
+        cell.fullName.text = order.fullName
+        cell.orderNumber.text = order.orderNumber
+        cell.status.text = "Статус: \(order.status)"
+        cell.orderPrice.text = order.orderPrice
+        cell.orderDate.text = order.orderDate
 
         return cell
 
@@ -62,10 +61,10 @@ class MainViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let place = places[indexPath.row]
+        let order = orders[indexPath.row]
         let deleteAction = UITableViewRowAction(style: .default, title: "Удалить") { (_, _ ) in
             
-            StorageMeneger.deleteObject(place)
+            StorageMeneger.deleteObject(order)
             tableView.deleteRows(at: [indexPath], with: .automatic)
             
         }
@@ -82,9 +81,9 @@ class MainViewController: UITableViewController {
             
 //            tabBarController?.tabBar.isHidden = true
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
-            let place = places[indexPath.row]
-            let newPlaceVC = segue.destination as! NewPlaceTableViewController
-            newPlaceVC.currentPlace = place
+            let order = orders[indexPath.row]
+            let newPlaceVC = segue.destination as! NewOrderTableViewController
+            newPlaceVC.currentOrder = order
             
         }
         
@@ -92,9 +91,9 @@ class MainViewController: UITableViewController {
     
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
         
-        guard let newPlaceVC = segue.source as? NewPlaceTableViewController else { return }
+        guard let newOrderVC = segue.source as? NewOrderTableViewController else { return }
         
-        newPlaceVC.savePlace()
+        newOrderVC.saveOrder()
         tableView.reloadData()
         
     }

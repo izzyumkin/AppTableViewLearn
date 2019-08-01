@@ -14,8 +14,8 @@
 		C4FEA2D8229652CC00DAC0AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FEA2D6229652CC00DAC0AD /* LaunchScreen.storyboard */; };
 		C4FEA2E22296534200DAC0AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2E12296534200DAC0AD /* MainViewController.swift */; };
 		C4FEA2E422980AA200DAC0AD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2E322980AA200DAC0AD /* CustomTableViewCell.swift */; };
-		C4FEA2E62298300200DAC0AD /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2E52298300200DAC0AD /* PlaceModel.swift */; };
-		C4FEA2EB229843FB00DAC0AD /* NewPlaceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2EA229843FB00DAC0AD /* NewPlaceTableViewController.swift */; };
+		C4FEA2E62298300200DAC0AD /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2E52298300200DAC0AD /* OrderModel.swift */; };
+		C4FEA2EB229843FB00DAC0AD /* NewOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2EA229843FB00DAC0AD /* NewOrderTableViewController.swift */; };
 		C4FEA2ED2298F8EB00DAC0AD /* StorageMeneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2EC2298F8EB00DAC0AD /* StorageMeneger.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +31,8 @@
 		C4FEA2D9229652CC00DAC0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4FEA2E12296534200DAC0AD /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C4FEA2E322980AA200DAC0AD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		C4FEA2E52298300200DAC0AD /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
-		C4FEA2EA229843FB00DAC0AD /* NewPlaceTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceTableViewController.swift; sourceTree = "<group>"; };
+		C4FEA2E52298300200DAC0AD /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
+		C4FEA2EA229843FB00DAC0AD /* NewOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderTableViewController.swift; sourceTree = "<group>"; };
 		C4FEA2EC2298F8EB00DAC0AD /* StorageMeneger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageMeneger.swift; sourceTree = "<group>"; };
 		CF2F1BE3D9F1DBEE8F40CFA2 /* Pods_AppTableViewLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppTableViewLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -69,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				C4FEA2E12296534200DAC0AD /* MainViewController.swift */,
-				C4FEA2EA229843FB00DAC0AD /* NewPlaceTableViewController.swift */,
+				C4FEA2EA229843FB00DAC0AD /* NewOrderTableViewController.swift */,
 			);
 			path = Orders;
 			sourceTree = "<group>";
@@ -118,7 +118,7 @@
 		C4FEA2E7229839F200DAC0AD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C4FEA2E52298300200DAC0AD /* PlaceModel.swift */,
+				C4FEA2E52298300200DAC0AD /* OrderModel.swift */,
 				C4FEA2EC2298F8EB00DAC0AD /* StorageMeneger.swift */,
 			);
 			path = Model;
@@ -269,11 +269,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4FEA2E422980AA200DAC0AD /* CustomTableViewCell.swift in Sources */,
-				C4FEA2E62298300200DAC0AD /* PlaceModel.swift in Sources */,
+				C4FEA2E62298300200DAC0AD /* OrderModel.swift in Sources */,
 				C4FEA2CE229652CA00DAC0AD /* AppDelegate.swift in Sources */,
 				C4FEA2E22296534200DAC0AD /* MainViewController.swift in Sources */,
 				C4484E3322F08629004D8C5E /* StateViewController.swift in Sources */,
-				C4FEA2EB229843FB00DAC0AD /* NewPlaceTableViewController.swift in Sources */,
+				C4FEA2EB229843FB00DAC0AD /* NewOrderTableViewController.swift in Sources */,
 				C4FEA2ED2298F8EB00DAC0AD /* StorageMeneger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
