@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C42C593422F2E9BE00BAC9E6 /* StorageMeneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C593322F2E9BE00BAC9E6 /* StorageMeneger.swift */; };
 		C4484E3322F08629004D8C5E /* StateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4484E3222F08629004D8C5E /* StateViewController.swift */; };
 		C4FEA2CE229652CA00DAC0AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */; };
 		C4FEA2D3229652CA00DAC0AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FEA2D1229652CA00DAC0AD /* Main.storyboard */; };
@@ -16,12 +17,12 @@
 		C4FEA2E422980AA200DAC0AD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2E322980AA200DAC0AD /* CustomTableViewCell.swift */; };
 		C4FEA2E62298300200DAC0AD /* OrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2E52298300200DAC0AD /* OrderModel.swift */; };
 		C4FEA2EB229843FB00DAC0AD /* NewOrderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2EA229843FB00DAC0AD /* NewOrderTableViewController.swift */; };
-		C4FEA2ED2298F8EB00DAC0AD /* StorageMeneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2EC2298F8EB00DAC0AD /* StorageMeneger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3BF41881576F3C84EBF7F373 /* Pods-AppTableViewLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTableViewLearn.debug.xcconfig"; path = "Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		B2C98A230661A1C657905AE4 /* Pods-AppTableViewLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTableViewLearn.release.xcconfig"; path = "Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn.release.xcconfig"; sourceTree = "<group>"; };
+		C42C593322F2E9BE00BAC9E6 /* StorageMeneger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageMeneger.swift; sourceTree = "<group>"; };
 		C4484E3222F08629004D8C5E /* StateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewController.swift; sourceTree = "<group>"; };
 		C4FEA2CA229652CA00DAC0AD /* AppTableViewLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTableViewLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		C4FEA2E322980AA200DAC0AD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		C4FEA2E52298300200DAC0AD /* OrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderModel.swift; sourceTree = "<group>"; };
 		C4FEA2EA229843FB00DAC0AD /* NewOrderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderTableViewController.swift; sourceTree = "<group>"; };
-		C4FEA2EC2298F8EB00DAC0AD /* StorageMeneger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageMeneger.swift; sourceTree = "<group>"; };
 		CF2F1BE3D9F1DBEE8F40CFA2 /* Pods_AppTableViewLearn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppTableViewLearn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				C4FEA2E52298300200DAC0AD /* OrderModel.swift */,
-				C4FEA2EC2298F8EB00DAC0AD /* StorageMeneger.swift */,
+				C42C593322F2E9BE00BAC9E6 /* StorageMeneger.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -273,8 +273,8 @@
 				C4FEA2CE229652CA00DAC0AD /* AppDelegate.swift in Sources */,
 				C4FEA2E22296534200DAC0AD /* MainViewController.swift in Sources */,
 				C4484E3322F08629004D8C5E /* StateViewController.swift in Sources */,
+				C42C593422F2E9BE00BAC9E6 /* StorageMeneger.swift in Sources */,
 				C4FEA2EB229843FB00DAC0AD /* NewOrderTableViewController.swift in Sources */,
-				C4FEA2ED2298F8EB00DAC0AD /* StorageMeneger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
