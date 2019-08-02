@@ -7,11 +7,49 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NewOrderTableViewController: UITableViewController {
     
     var currentOrder: Order?
+    
+    let realm = try! Realm()
+    
     var imageIsChenged = false
+    
+    let pickerView = UIPickerView()
+    let toolBar = UIToolbar()
+    
+    private let titles = ["Выбери тип обложки:",
+                          "глянец, черная, серебро",
+                          "глянец, черная, серебро, 2в1",
+                          "ребристая, черная, серебро",
+                          "ребристая, черная, серебро, 2в1"]
+    
+    private let carBrands = ["Выберите марку авто:",
+                             "Nissan",
+                             "Audi",
+                             "Lada",
+                             "Toyota",
+                             "Hyundai",
+                             "Kia",
+                             "Renault",
+                             "Volkswagen",
+                             "Ford",
+                             "Mitsubishi",
+                             "Mercedes-Benz",
+                             "Skoda",
+                             "BMW"]
+    
+    private let deliveryMethods = ["Выберите способ доставки:",
+                                   "Почтой России(Бандеролдь)",
+                                   "Почтой России(Посылка)",
+                                   "CDEK",
+                                   "Самовывоз"]
+    
+    var selectedPriorityCover: String?
+    var selectedPriorityCarBrends: String?
+    var selectedPriorityDeliveryMethods: String?
     
     // MARK: - Outlets
     
@@ -39,31 +77,32 @@ class NewOrderTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+//        fdas()
+        setDate()
+        createPickerView()
+        dissmisPickerView()
         tableView.tableFooterView = UIView()
         saveButton.isEnabled = false
-        coverName.addTarget(self, action: #selector(textFieldChenged), for: .editingChanged)
+        coverName.addTarget(self, action: #selector(textFieldChenged), for: .editingDidEnd)
         setupEditScrean()
         
+//        print(currentNumber?.totalNumberOrders)
         
     }
     
-    // Закрывает окно
+    // Закрывает экран
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         
         dismiss(animated: true)
         
-        
     }
     
     // MARK: - Table view delegate
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         // Вызываем AlertController по нажатию на imageData с возможностью выбора способа загрузки фото
         if imageData.isHighlighted {
 
-            // Создаем AlertController
             let cameraImage = #imageLiteral(resourceName: "camera")
             let photoImage = #imageLiteral(resourceName: "photo")
 
@@ -104,7 +143,6 @@ class NewOrderTableViewController: UITableViewController {
     }
     
     // MARK: - Save
-    
     func saveOrder() {
         
         var image: UIImage
@@ -118,6 +156,9 @@ class NewOrderTableViewController: UITableViewController {
             image = #imageLiteral(resourceName: "imagePlaceholder")
 
         }
+        
+        let num = realm.objects(Number.self).first?.totalNumberOrders
+        let number = num! + 1
         
         let imageData = image.pngData()
         let newOrder = Order(coverName: coverName.text!, coverCircle: coverCircle.text!, coverRectangle: coverRectangle.text!, connection: connection.text!, fullName: fullName.text!, deliveryMethod: deliveryMethod.text!, address: address.text!, postcode: postcode.text!, comment: comment.text!, imageData: imageData, orderDate: orderDate.text!, orderNumber: orderNumber.text!, status: timeStatus, orderPrice: orderPrice.text!)
@@ -146,14 +187,18 @@ class NewOrderTableViewController: UITableViewController {
         } else {
             
             StorageMeneger.saveObject(newOrder)
+            
+            try! realm.write {
+                
+                realm.objects(Number.self).first?.totalNumberOrders = number
+                
+            }
         
         }
-        
         
     }
     
     // MARK: - EditScrean
-    
     private func setupEditScrean() {
         
         if currentOrder != nil {
@@ -190,16 +235,76 @@ class NewOrderTableViewController: UITableViewController {
     private func setupNavigationBar() {
         
         navigationItem.leftBarButtonItem = nil
-        title = currentOrder?.fullName
+        
+        if currentOrder?.fullName != "" {
+            
+            title = currentOrder?.fullName
+            
+        } else {
+            
+            title = "Заказ \(currentOrder?.orderNumber ?? "")"
+            
+        }
+        
         saveButton.isEnabled = true
+        
+    }
+    
+    // MARK: - PickerView
+    private func createPickerView() {
+        
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
+        coverName.inputView = pickerView
+        coverCircle.inputView = pickerView
+        deliveryMethod.inputView = pickerView
+        
+    }
+    
+    private func dissmisPickerView() {
+        
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Выбрать", style: .done, target: self, action: #selector(dissmisKeyboard))
+        
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        coverName.inputAccessoryView = toolBar
+        coverCircle.inputAccessoryView = toolBar
+        deliveryMethod.inputAccessoryView = toolBar
+        
+        
+    }
+    
+    @objc private func dissmisKeyboard() {
+        
+        view.endEditing(true)
+        
+    }
+    
+    // MARK: - SetDate, Number
+    private func setDate() {
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "ru_RU")
+        formatter.dateFormat = "dd MMMM, yyyy (HH:mm)"
+        let result = formatter.string(from: date)
+        orderDate.text = result
+        
+        let num = realm.objects(Number.self).first?.totalNumberOrders
+        let number = num! + 1
+        
+        orderNumber.text = "№\(number)"
         
     }
 
 }
 
+// MARK: - Скрываем клавиатуру по нажатию на Done
 extension NewOrderTableViewController: UITextFieldDelegate {
-    
-    //Скрываем клавиатуру по нажатию на Done
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
@@ -211,7 +316,7 @@ extension NewOrderTableViewController: UITextFieldDelegate {
     
     @objc private func textFieldChenged() {
         
-        if coverName.text?.isEmpty == false {
+        if coverName.text != "" {
             
             saveButton.isEnabled = true
             
@@ -225,6 +330,7 @@ extension NewOrderTableViewController: UITextFieldDelegate {
     
 }
 
+// MARK: - UIImagePickerController
 extension NewOrderTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func chooseImagePicker(sourse: UIImagePickerController.SourceType) {
@@ -250,6 +356,97 @@ extension NewOrderTableViewController: UIImagePickerControllerDelegate, UINaviga
         
         imageData.clipsToBounds = true
         dismiss(animated: true)
+        
+    }
+    
+}
+
+// MARK: - UIPickerView
+extension NewOrderTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        return 1
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if coverName.isEditing {
+            
+            return titles.count
+            
+        } else if coverCircle.isEditing {
+            
+            return carBrands.count
+            
+        } else {
+            
+           return deliveryMethods.count
+            
+        }
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if coverName.isEditing {
+            
+            return titles[row]
+            
+        } else if coverCircle.isEditing {
+            
+            return carBrands[row]
+            
+        } else {
+            
+            return deliveryMethods[row]
+            
+        }
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if coverName.isEditing {
+            
+            switch row {
+                
+            case 0:
+                coverName.text = ""
+                orderPrice.text = "0₽"
+            case 1:
+                selectedPriorityCover = titles[row]
+                coverName.text = "Обложка для автодокументов \(selectedPriorityCover!)"
+                orderPrice.text = "1190₽"
+            case 2:
+                selectedPriorityCover = titles[row]
+                coverName.text = "Обложка для автодокументов \(selectedPriorityCover!)"
+                orderPrice.text = "1490₽"
+            case 3:
+                selectedPriorityCover = titles[row]
+                coverName.text = "Обложка для автодокументов \(selectedPriorityCover!)"
+                orderPrice.text = "1490₽"
+            case 4:
+                selectedPriorityCover = titles[row]
+                coverName.text = "Обложка для автодокументов \(selectedPriorityCover!)"
+                orderPrice.text = "1690₽"
+            default:
+                break
+                
+            }
+            
+        } else if coverCircle.isEditing {
+            
+            selectedPriorityCarBrends = carBrands[row]
+            coverCircle.text = selectedPriorityCarBrends
+            
+        } else {
+            
+            selectedPriorityDeliveryMethods = deliveryMethods[row]
+            deliveryMethod.text = selectedPriorityDeliveryMethods
+            
+        }
         
     }
     

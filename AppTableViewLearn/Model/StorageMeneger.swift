@@ -12,6 +12,7 @@ let realm = try! Realm()
 
 class StorageMeneger {
     
+    
     static func saveObject(_ place: Order) {
         
         try! realm.write {

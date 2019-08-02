@@ -15,7 +15,7 @@
         <scene sceneID="QR0-Oa-RsQ">
             <objects>
                 <tableViewController id="qBP-nC-urn" customClass="MainViewController" customModule="AppTableViewLearn" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="146" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Sj-65-ugA">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="146" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Sj-65-ugA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -24,12 +24,12 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="146"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1KI-vA-6M2" id="gYd-TM-fdC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="145.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="146"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5S7-tf-SEH">
-                                            <rect key="frame" x="0.0" y="0.0" width="4" height="145.5"/>
-                                            <color key="backgroundColor" red="0.63578385110000002" green="0.86511760950000005" blue="0.68232887980000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="4" height="146"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="4" id="7Rt-Mb-5wp"/>
                                             </constraints>
@@ -59,7 +59,7 @@
                                                 </label>
                                             </subviews>
                                         </stackView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="№134" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb0-62-vDk">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="№134" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xb0-62-vDk">
                                             <rect key="frame" x="314" y="16" width="46" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="ZRR-Wc-rzS"/>
@@ -182,7 +182,7 @@
             <objects>
                 <tableViewController id="nLF-hU-smC" customClass="NewOrderTableViewController" customModule="AppTableViewLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hnW-Jq-wim">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -271,14 +271,11 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Выбери тип обложки" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PRi-xD-2Nh">
+                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Выбери тип обложки" textAlignment="natural" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="PRi-xD-2Nh">
                                                             <rect key="frame" x="0.0" y="29.5" width="343" height="23.5"/>
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                                                            <connections>
-                                                                <outlet property="delegate" destination="nLF-hU-smC" id="r3i-XK-Lb1"/>
-                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                     <constraints>
@@ -340,9 +337,6 @@
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                                                            <connections>
-                                                                <outlet property="delegate" destination="nLF-hU-smC" id="MP8-Wf-j1w"/>
-                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                     <constraints>
@@ -406,7 +400,7 @@
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="1231₽" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a3u-j9-ViO">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="0₽" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a3u-j9-ViO">
                                                     <rect key="frame" x="79" y="7" width="280" height="29"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="29" id="R30-hr-5dz"/>
@@ -511,7 +505,7 @@
                                         <rect key="frame" x="0.0" y="517" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Yb-kM-HiC" id="rhb-a1-jKW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gbd-Wg-7iD">
@@ -556,7 +550,7 @@
                                         <rect key="frame" x="0.0" y="592" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HTP-Px-Ma1" id="dyR-cJ-6Qd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="nTs-s3-r2S">
@@ -573,9 +567,6 @@
                                                             <nil key="textColor"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                                                            <connections>
-                                                                <outlet property="delegate" destination="nLF-hU-smC" id="Os8-IC-f9A"/>
-                                                            </connections>
                                                         </textField>
                                                     </subviews>
                                                     <constraints>
@@ -894,7 +885,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8G-jn-h5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="az6-Ww-IGZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1921" y="143"/>
+            <point key="canvasLocation" x="2065" y="143"/>
         </scene>
         <!--Заказы-->
         <scene sceneID="0my-t8-xrK">
@@ -926,7 +917,7 @@
         <!--Статистика-->
         <scene sceneID="cEA-f9-J4m">
             <objects>
-                <viewController id="dtd-DO-zjz" sceneMemberID="viewController">
+                <viewController id="dtd-DO-zjz" customClass="StateViewController" customModule="AppTableViewLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N0K-6n-Q0o">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -942,7 +933,7 @@
         <!--Настройки-->
         <scene sceneID="9mG-Gw-cMe">
             <objects>
-                <viewController id="7lq-px-VUN" customClass="StateViewController" customModule="AppTableViewLearn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="7lq-px-VUN" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RB3-6k-nTu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -997,7 +988,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8xF-w9-Cqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1921" y="-627"/>
+            <point key="canvasLocation" x="2065" y="-627"/>
         </scene>
     </scenes>
     <resources>
@@ -1016,6 +1007,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="3bB-oP-xDR"/>
+        <segue reference="lDO-Tf-BoF"/>
     </inferredMetricsTieBreakers>
 </document>

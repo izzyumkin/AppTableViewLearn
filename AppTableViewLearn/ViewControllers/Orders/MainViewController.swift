@@ -12,9 +12,15 @@ import RealmSwift
 class MainViewController: UITableViewController {
     
     var orders: Results<Order>!
+    
+    let realm = try! Realm()
+    
+    
+//    let num = realm.objects(Number).first
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         decorateTabBar()
         
         orders = realm.objects(Order.self)
@@ -58,7 +64,6 @@ class MainViewController: UITableViewController {
     }
     
     // MARK: - TableViewDelegate
-    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let order = orders[indexPath.row]
@@ -74,12 +79,10 @@ class MainViewController: UITableViewController {
     }
     
      // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "showDetail" {
             
-//            tabBarController?.tabBar.isHidden = true
             guard let indexPath = tableView.indexPathForSelectedRow else { return }
             let order = orders[indexPath.row]
             let newPlaceVC = segue.destination as! NewOrderTableViewController
