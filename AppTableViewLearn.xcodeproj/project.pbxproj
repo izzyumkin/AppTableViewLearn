@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A4F1EA71D3091545BAB64533 /* Pods_AppTableViewLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2F1BE3D9F1DBEE8F40CFA2 /* Pods_AppTableViewLearn.framework */; };
-		C413D8DF22F43E72006DFF00 /* OrderNumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413D8DE22F43E72006DFF00 /* OrderNumberModel.swift */; };
 		C42C593422F2E9BE00BAC9E6 /* StorageMeneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C593322F2E9BE00BAC9E6 /* StorageMeneger.swift */; };
+		C43C428B22F4898E00EB888D /* OrderNumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C428A22F4898E00EB888D /* OrderNumberModel.swift */; };
 		C4484E3322F08629004D8C5E /* StateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4484E3222F08629004D8C5E /* StateViewController.swift */; };
 		C4FEA2CE229652CA00DAC0AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */; };
 		C4FEA2D3229652CA00DAC0AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FEA2D1229652CA00DAC0AD /* Main.storyboard */; };
@@ -24,8 +24,8 @@
 /* Begin PBXFileReference section */
 		3BF41881576F3C84EBF7F373 /* Pods-AppTableViewLearn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTableViewLearn.debug.xcconfig"; path = "Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn.debug.xcconfig"; sourceTree = "<group>"; };
 		B2C98A230661A1C657905AE4 /* Pods-AppTableViewLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTableViewLearn.release.xcconfig"; path = "Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn.release.xcconfig"; sourceTree = "<group>"; };
-		C413D8DE22F43E72006DFF00 /* OrderNumberModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OrderNumberModel.swift; path = ../OrderNumberModel.swift; sourceTree = "<group>"; };
 		C42C593322F2E9BE00BAC9E6 /* StorageMeneger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageMeneger.swift; sourceTree = "<group>"; };
+		C43C428A22F4898E00EB888D /* OrderNumberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderNumberModel.swift; sourceTree = "<group>"; };
 		C4484E3222F08629004D8C5E /* StateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewController.swift; sourceTree = "<group>"; };
 		C4FEA2CA229652CA00DAC0AD /* AppTableViewLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTableViewLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -67,14 +67,6 @@
 				CF2F1BE3D9F1DBEE8F40CFA2 /* Pods_AppTableViewLearn.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C413D8E022F44F63006DFF00 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-				C413D8DE22F43E72006DFF00 /* OrderNumberModel.swift */,
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		C4484E3022F085FD004D8C5E /* Orders */ = {
@@ -131,7 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				C4FEA2E52298300200DAC0AD /* OrderModel.swift */,
-				C413D8E022F44F63006DFF00 /* New Group */,
+				C43C428A22F4898E00EB888D /* OrderNumberModel.swift */,
 				C42C593322F2E9BE00BAC9E6 /* StorageMeneger.swift */,
 			);
 			path = Model;
@@ -288,7 +280,7 @@
 				C4484E3322F08629004D8C5E /* StateViewController.swift in Sources */,
 				C42C593422F2E9BE00BAC9E6 /* StorageMeneger.swift in Sources */,
 				C4FEA2EB229843FB00DAC0AD /* NewOrderTableViewController.swift in Sources */,
-				C413D8DF22F43E72006DFF00 /* OrderNumberModel.swift in Sources */,
+				C43C428B22F4898E00EB888D /* OrderNumberModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

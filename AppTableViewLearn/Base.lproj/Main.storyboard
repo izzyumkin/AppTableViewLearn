@@ -900,7 +900,7 @@
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                         </textAttributes>
                     </navigationBar>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pHy-CI-X8b">
