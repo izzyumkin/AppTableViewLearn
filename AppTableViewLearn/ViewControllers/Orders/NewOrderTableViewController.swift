@@ -47,12 +47,22 @@ class NewOrderTableViewController: UITableViewController {
                                    "CDEK",
                                    "Самовывоз"]
     
+    private let orderStatus = ["Выберите статус заказа:",
+                               "В процессе оформления",
+                               "На изготовлении",
+                               "Изготовлен, ожидает оплату",
+                               "Оплачен, ожидает отправку",
+                               "Отправлен, клиент ждет трек",
+                               "Выполнен",
+                               "Отменен"]
+    
     var selectedPriorityCover: String?
     var selectedPriorityCarBrends: String?
     var selectedPriorityDeliveryMethods: String?
+    var selectedPriorityOrderStatus: String? = "В процессе оформления"
+    var statusColor = "Green"
     
     // MARK: - Outlets
-    
     // Товары
     @IBOutlet weak var coverName: UITextField!
     @IBOutlet weak var coverCircle: UITextField!
@@ -74,10 +84,11 @@ class NewOrderTableViewController: UITableViewController {
     @IBOutlet weak var orderPrice: UITextField!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var statusButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        fdas()
+        
         setDate()
         createPickerView()
         dissmisPickerView()
@@ -85,8 +96,7 @@ class NewOrderTableViewController: UITableViewController {
         saveButton.isEnabled = false
         coverName.addTarget(self, action: #selector(textFieldChenged), for: .editingDidEnd)
         setupEditScrean()
-        
-//        print(currentNumber?.totalNumberOrders)
+        navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         
     }
     
@@ -94,6 +104,17 @@ class NewOrderTableViewController: UITableViewController {
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         
         dismiss(animated: true)
+        
+    }
+    
+    @IBAction func setStatus(_ sender: UIButton) {
+
+        let dummy = UITextField(frame: CGRect.zero)
+        view.addSubview(dummy)
+        
+        dummy.inputView = pickerView
+        dummy.inputAccessoryView = toolBar
+        dummy.becomeFirstResponder()
         
     }
     
@@ -145,7 +166,7 @@ class NewOrderTableViewController: UITableViewController {
     // MARK: - Save
     func saveOrder() {
         
-        var image: UIImage
+        var image: UIImage?
         
         if imageIsChenged {
 
@@ -153,15 +174,15 @@ class NewOrderTableViewController: UITableViewController {
 
         } else {
  
-            image = #imageLiteral(resourceName: "imagePlaceholder")
+            image = #imageLiteral(resourceName: "picture (1)")
 
         }
         
         let num = realm.objects(Number.self).first?.totalNumberOrders
         let number = num! + 1
-        
-        let imageData = image.pngData()
-        let newOrder = Order(coverName: coverName.text!, coverCircle: coverCircle.text!, coverRectangle: coverRectangle.text!, connection: connection.text!, fullName: fullName.text!, deliveryMethod: deliveryMethod.text!, address: address.text!, postcode: postcode.text!, comment: comment.text!, imageData: imageData, orderDate: orderDate.text!, orderNumber: orderNumber.text!, status: timeStatus, orderPrice: orderPrice.text!)
+
+        let imageData = image?.pngData()
+        let newOrder = Order(coverName: coverName.text!, coverCircle: coverCircle.text!, coverRectangle: coverRectangle.text!, connection: connection.text!, fullName: fullName.text!, deliveryMethod: deliveryMethod.text!, address: address.text!, postcode: postcode.text!, comment: comment.text!, imageData: imageData, orderDate: orderDate.text!, orderNumber: orderNumber.text!, status: selectedPriorityOrderStatus!, orderPrice: orderPrice.text!, statusColor: statusColor)
         
         if currentOrder != nil {
             
@@ -181,6 +202,7 @@ class NewOrderTableViewController: UITableViewController {
                 currentOrder?.imageData = newOrder.imageData
                 currentOrder?.status = newOrder.status
                 currentOrder?.orderPrice = newOrder.orderPrice
+                currentOrder?.statusColor = newOrder.statusColor
                 
             }
             
@@ -224,7 +246,7 @@ class NewOrderTableViewController: UITableViewController {
             comment.text  = currentOrder?.comment
             orderDate.text = currentOrder?.orderDate
             orderNumber.text = currentOrder?.orderNumber
-            //Добавь статус!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            statusButton.setTitle(currentOrder?.status, for: .normal)
             orderPrice.text = currentOrder?.orderPrice
             
             
@@ -380,9 +402,13 @@ extension NewOrderTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
             
             return carBrands.count
             
-        } else {
+        } else if deliveryMethod.isEditing {
             
            return deliveryMethods.count
+            
+        } else {
+            
+            return orderStatus.count
             
         }
         
@@ -398,9 +424,13 @@ extension NewOrderTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
             
             return carBrands[row]
             
-        } else {
+        } else if deliveryMethod.isEditing {
             
             return deliveryMethods[row]
+            
+        } else {
+            
+            return orderStatus[row]
             
         }
         
@@ -441,10 +471,33 @@ extension NewOrderTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
             selectedPriorityCarBrends = carBrands[row]
             coverCircle.text = selectedPriorityCarBrends
             
-        } else {
+        } else if deliveryMethod.isEditing {
             
             selectedPriorityDeliveryMethods = deliveryMethods[row]
             deliveryMethod.text = selectedPriorityDeliveryMethods
+            
+        } else {
+            
+            selectedPriorityOrderStatus = orderStatus[row]
+            statusButton.setTitle(selectedPriorityOrderStatus, for: .normal)
+            
+            switch row {
+                
+            case 2:
+                statusColor = "Red"
+            case 3:
+                statusColor = "Yellow"
+            case 4:
+                statusColor = "Red"
+            case 5:
+                statusColor = "Yellow"
+            case 6:
+                statusColor = "Blue"
+            case 7:
+                statusColor = "Orange"
+            default:
+                break
+            }
             
         }
         

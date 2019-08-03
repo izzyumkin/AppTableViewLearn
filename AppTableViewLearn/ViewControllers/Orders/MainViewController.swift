@@ -12,17 +12,20 @@ import RealmSwift
 class MainViewController: UITableViewController {
     
     var orders: Results<Order>!
-    
     let realm = try! Realm()
-    
-    
-//    let num = realm.objects(Number).first
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         decorateTabBar()
         
+        let num = Number()
+        num.totalNumberOrders = 0
+        
+        try! realm.write {
+            realm.add(num)
+        }
+
         orders = realm.objects(Order.self)
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         
@@ -39,7 +42,6 @@ class MainViewController: UITableViewController {
     }
 
     // MARK: - TableViewDataSource
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
         return orders.isEmpty ? 0 : orders.count
@@ -58,9 +60,10 @@ class MainViewController: UITableViewController {
         cell.status.text = "Статус: \(order.status)"
         cell.orderPrice.text = order.orderPrice
         cell.orderDate.text = order.orderDate
+        cell.statusView.backgroundColor = UIColor(named: order.statusColor)
 
         return cell
-
+        
     }
     
     // MARK: - TableViewDelegate

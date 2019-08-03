@@ -76,10 +76,10 @@
                                                 <constraint firstAttribute="height" constant="0.5" id="Lcj-Gw-XUM"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Статус: в процесе" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFZ-2V-Uyt">
-                                            <rect key="frame" x="16" y="101" width="229" height="28"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Статус: в процесе" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NFZ-2V-Uyt">
+                                            <rect key="frame" x="16" y="101" width="225" height="28"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="229" id="WJ2-b5-kOA"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="225" id="WJ2-b5-kOA"/>
                                                 <constraint firstAttribute="height" constant="28" id="eed-oF-gJO"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -120,8 +120,8 @@
                                         <constraint firstAttribute="trailing" secondItem="xb0-62-vDk" secondAttribute="trailing" constant="15" id="N5M-Oa-Dmw"/>
                                         <constraint firstItem="NFZ-2V-Uyt" firstAttribute="leading" secondItem="gYd-TM-fdC" secondAttribute="leading" constant="16" id="TDt-Wy-KbP"/>
                                         <constraint firstItem="5S7-tf-SEH" firstAttribute="top" secondItem="gYd-TM-fdC" secondAttribute="top" id="VgG-d1-agu"/>
-                                        <constraint firstItem="Avf-Rd-E8d" firstAttribute="leading" secondItem="NFZ-2V-Uyt" secondAttribute="trailing" constant="2" id="XdI-m1-PPR"/>
                                         <constraint firstAttribute="trailing" secondItem="Avf-Rd-E8d" secondAttribute="trailing" constant="16" id="adq-0u-HoF"/>
+                                        <constraint firstItem="Avf-Rd-E8d" firstAttribute="leading" secondItem="NFZ-2V-Uyt" secondAttribute="trailing" constant="6" id="b28-12-rTX"/>
                                         <constraint firstItem="NFZ-2V-Uyt" firstAttribute="top" secondItem="scA-nQ-N4u" secondAttribute="bottom" constant="7.5" id="cbl-z1-Mqu"/>
                                         <constraint firstAttribute="bottom" secondItem="5S7-tf-SEH" secondAttribute="bottom" id="gI2-m5-6j0"/>
                                         <constraint firstItem="Oru-y8-IwT" firstAttribute="top" secondItem="gYd-TM-fdC" secondAttribute="top" constant="16" id="gfh-M5-Khb"/>
@@ -182,7 +182,7 @@
             <objects>
                 <tableViewController id="nLF-hU-smC" customClass="NewOrderTableViewController" customModule="AppTableViewLearn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hnW-Jq-wim">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
@@ -505,7 +505,7 @@
                                         <rect key="frame" x="0.0" y="517" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4Yb-kM-HiC" id="rhb-a1-jKW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="gbd-Wg-7iD">
@@ -550,7 +550,7 @@
                                         <rect key="frame" x="0.0" y="592" width="375" height="75"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HTP-Px-Ma1" id="dyR-cJ-6Qd">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="nTs-s3-r2S">
@@ -833,6 +833,9 @@
                                                             <integer key="value" value="27"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="setStatus:" destination="nLF-hU-smC" eventType="touchUpInside" id="ew2-xh-s52"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -880,6 +883,7 @@
                         <outlet property="orderPrice" destination="a3u-j9-ViO" id="Fmw-6v-Dr4"/>
                         <outlet property="postcode" destination="ylU-Xn-HEJ" id="AmK-gF-kSe"/>
                         <outlet property="saveButton" destination="wbX-U0-Z8t" id="AVh-hm-0GV"/>
+                        <outlet property="statusButton" destination="B1x-VG-H8b" id="hOd-1o-Edz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8G-jn-h5j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -887,11 +891,13 @@
             </objects>
             <point key="canvasLocation" x="2065" y="143"/>
         </scene>
-        <!--Заказы-->
+        <!--Navigation Controller-->
         <scene sceneID="0my-t8-xrK">
             <objects>
                 <navigationController id="sp4-Ls-zhz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Заказы" image="shopping-bag" id="U21-kL-zxB"/>
+                    <tabBarItem key="tabBarItem" title="" image="shopping-bag" id="U21-kL-zxB">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="Ysa-3A-sRG">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -914,7 +920,7 @@
             </objects>
             <point key="canvasLocation" x="268" y="142.57871064467767"/>
         </scene>
-        <!--Статистика-->
+        <!--State View Controller-->
         <scene sceneID="cEA-f9-J4m">
             <objects>
                 <viewController id="dtd-DO-zjz" customClass="StateViewController" customModule="AppTableViewLearn" customModuleProvider="target" sceneMemberID="viewController">
@@ -924,13 +930,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="6fl-1L-Jge"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Статистика" image="progress-report" id="Pb8-b5-LHx"/>
+                    <tabBarItem key="tabBarItem" title="" image="progress-report" id="Pb8-b5-LHx">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1iA-nM-eZf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-671.20000000000005" y="911.69415292353835"/>
         </scene>
-        <!--Настройки-->
+        <!--View Controller-->
         <scene sceneID="9mG-Gw-cMe">
             <objects>
                 <viewController id="7lq-px-VUN" sceneMemberID="viewController">
@@ -940,7 +948,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ZvB-MG-PTE"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Настройки" image="settings" id="vzX-0n-hV7"/>
+                    <tabBarItem key="tabBarItem" title="" image="settings" id="vzX-0n-hV7">
+                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMP-cs-TbH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -974,9 +984,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OGC-tO-YwW" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dRS-2F-F5s">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="dRS-2F-F5s">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hFL-52-zBN">
@@ -1007,6 +1018,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lDO-Tf-BoF"/>
+        <segue reference="3bB-oP-xDR"/>
     </inferredMetricsTieBreakers>
 </document>

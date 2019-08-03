@@ -29,8 +29,9 @@ class Order: Object {
     @objc dynamic var orderNumber = ""
     @objc dynamic var orderPrice = ""
     @objc dynamic var status = ""
+    @objc dynamic var statusColor = ""
     
-    convenience init(coverName: String, coverCircle: String?, coverRectangle: String?, connection: String?, fullName: String?, deliveryMethod: String?, address: String?, postcode: String?, comment: String?, imageData: Data?, orderDate: String, orderNumber: String, status: String, orderPrice: String) {
+    convenience init(coverName: String, coverCircle: String?, coverRectangle: String?, connection: String?, fullName: String?, deliveryMethod: String?, address: String?, postcode: String?, comment: String?, imageData: Data?, orderDate: String, orderNumber: String, status: String, orderPrice: String, statusColor: String) {
         self.init()
         
         self.coverName = coverName
@@ -49,6 +50,7 @@ class Order: Object {
         self.orderNumber = orderNumber
         self.orderPrice = orderPrice
         self.status = status
+        self.statusColor = statusColor
         
     }
     
