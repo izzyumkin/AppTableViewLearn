@@ -249,7 +249,6 @@ class NewOrderTableViewController: UITableViewController {
             statusButton.setTitle(currentOrder?.status, for: .normal)
             orderPrice.text = currentOrder?.orderPrice
             
-            
         }
         
     }
@@ -296,7 +295,6 @@ class NewOrderTableViewController: UITableViewController {
         coverName.inputAccessoryView = toolBar
         coverCircle.inputAccessoryView = toolBar
         deliveryMethod.inputAccessoryView = toolBar
-        
         
     }
     

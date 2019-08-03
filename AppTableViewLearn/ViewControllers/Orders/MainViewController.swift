@@ -9,7 +9,9 @@
 import UIKit
 import RealmSwift
 
-class MainViewController: UITableViewController {
+class MainViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     var orders: Results<Order>!
     let realm = try! Realm()
@@ -41,45 +43,7 @@ class MainViewController: UITableViewController {
         
     }
 
-    // MARK: - TableViewDataSource
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        return orders.isEmpty ? 0 : orders.count
-
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
-
-        let order = orders[indexPath.row]
-
-        cell.orderName.text = order.coverName
-        cell.fullName.text = order.fullName
-        cell.orderNumber.text = order.orderNumber
-        cell.status.text = "Статус: \(order.status)"
-        cell.orderPrice.text = order.orderPrice
-        cell.orderDate.text = order.orderDate
-        cell.statusView.backgroundColor = UIColor(named: order.statusColor)
-
-        return cell
-        
-    }
-    
-    // MARK: - TableViewDelegate
-    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        let order = orders[indexPath.row]
-        let deleteAction = UITableViewRowAction(style: .default, title: "Удалить") { (_, _ ) in
-            
-            StorageMeneger.deleteObject(order)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            
-        }
-        
-        return [deleteAction]
-        
-    }
     
      // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -104,4 +68,52 @@ class MainViewController: UITableViewController {
         
     }
 
+}
+
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return orders.isEmpty ? 0 : orders.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        
+        let order = orders[indexPath.row]
+        
+        cell.orderName.text = order.coverName
+        cell.fullName.text = order.fullName
+        cell.orderNumber.text = order.orderNumber
+        cell.status.text = "Статус: \(order.status)"
+        cell.orderPrice.text = order.orderPrice
+        cell.orderDate.text = order.orderDate
+        cell.statusView.backgroundColor = UIColor(named: order.statusColor)
+        
+        return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let order = orders[indexPath.row]
+        let deleteAction = UITableViewRowAction(style: .default, title: "Удалить") { (_, _ ) in
+            
+            StorageMeneger.deleteObject(order)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+        }
+        
+        return [deleteAction]
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        return 146.0
+        
+    }
+    
 }
