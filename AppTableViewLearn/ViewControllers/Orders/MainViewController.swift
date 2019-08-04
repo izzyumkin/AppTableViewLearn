@@ -20,17 +20,30 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         decorateTabBar()
-        
-        let num = Number()
-        num.totalNumberOrders = 0
-        
-        try! realm.write {
-            realm.add(num)
-        }
+        isAppAlreadyLaunchedOnce()
 
         orders = realm.objects(Order.self)
         navigationController?.navigationBar.setValue(true, forKey: "hidesShadow")
         
+    }
+    
+    func isAppAlreadyLaunchedOnce(){
+        let defaults = UserDefaults.standard
+        
+        if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
+            print("App already launched : \(isAppAlreadyLaunchedOnce)")
+        }else{
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            
+                let num = Number()
+                num.totalNumberOrders = 0
+
+                let realm = try! Realm()
+                try! realm.write {
+                    realm.add(num)
+                }
+            
+        }
     }
     
     private func decorateTabBar() {
@@ -81,11 +94,20 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
+        cell.selectionStyle = .none
         
         let order = orders[indexPath.row]
         
         cell.orderName.text = order.coverName
-        cell.fullName.text = order.fullName
+        if order.fullName != "" {
+            
+            cell.fullName.text = order.fullName
+            
+        } else  {
+            
+            cell.fullName.text = order.connection
+            
+        }
         cell.orderNumber.text = order.orderNumber
         cell.status.text = "Статус: \(order.status)"
         cell.orderPrice.text = order.orderPrice
@@ -114,6 +136,22 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         return 146.0
         
+    }
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+        }
+
+    }
+
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.backgroundColor = .white
+        }
+    
     }
     
 }
