@@ -32,16 +32,24 @@ class MainViewController: UIViewController {
         
         if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
             print("App already launched : \(isAppAlreadyLaunchedOnce)")
-        }else{
+        } else {
             defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
             
-                let num = Number()
-                num.totalNumberOrders = 0
+            let num = Number()
+            let state = State()
+            
+            num.totalNumberOrders = 0
+            state.revenue = 0
+            state.costPrice = 0
+            state.progress = 0
+            state.costs = 0
+            state.profit = 0
 
-                let realm = try! Realm()
-                try! realm.write {
-                    realm.add(num)
-                }
+            let realm = try! Realm()
+            try! realm.write {
+                realm.add(num)
+                realm.add(state)
+            }
             
         }
     }

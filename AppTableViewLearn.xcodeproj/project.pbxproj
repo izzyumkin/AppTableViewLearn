@@ -10,9 +10,11 @@
 		A4F1EA71D3091545BAB64533 /* Pods_AppTableViewLearn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2F1BE3D9F1DBEE8F40CFA2 /* Pods_AppTableViewLearn.framework */; };
 		C42C593422F2E9BE00BAC9E6 /* StorageMeneger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42C593322F2E9BE00BAC9E6 /* StorageMeneger.swift */; };
 		C43C428B22F4898E00EB888D /* OrderNumberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43C428A22F4898E00EB888D /* OrderNumberModel.swift */; };
-		C4484E3322F08629004D8C5E /* StateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4484E3222F08629004D8C5E /* StateViewController.swift */; };
 		C4C1854822F70B8200B3D42B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4C1854722F70B8200B3D42B /* Assets.xcassets */; };
 		C4F0B58822F70D87003DA14F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4F0B58722F70D87003DA14F /* LaunchScreen.storyboard */; };
+		C4F0B58A22F756AF003DA14F /* StateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0B58922F756AF003DA14F /* StateModel.swift */; };
+		C4F0B58C22F812F7003DA14F /* StateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0B58B22F812F6003DA14F /* StateTableViewController.swift */; };
+		C4F0B58F22F956AE003DA14F /* AlertActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0B58E22F956AE003DA14F /* AlertActionSheet.swift */; };
 		C4FEA2CE229652CA00DAC0AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */; };
 		C4FEA2D3229652CA00DAC0AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4FEA2D1229652CA00DAC0AD /* Main.storyboard */; };
 		C4FEA2E22296534200DAC0AD /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4FEA2E12296534200DAC0AD /* MainViewController.swift */; };
@@ -26,9 +28,11 @@
 		B2C98A230661A1C657905AE4 /* Pods-AppTableViewLearn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTableViewLearn.release.xcconfig"; path = "Target Support Files/Pods-AppTableViewLearn/Pods-AppTableViewLearn.release.xcconfig"; sourceTree = "<group>"; };
 		C42C593322F2E9BE00BAC9E6 /* StorageMeneger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageMeneger.swift; sourceTree = "<group>"; };
 		C43C428A22F4898E00EB888D /* OrderNumberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderNumberModel.swift; sourceTree = "<group>"; };
-		C4484E3222F08629004D8C5E /* StateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViewController.swift; sourceTree = "<group>"; };
 		C4C1854722F70B8200B3D42B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4F0B58722F70D87003DA14F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C4F0B58922F756AF003DA14F /* StateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateModel.swift; sourceTree = "<group>"; };
+		C4F0B58B22F812F6003DA14F /* StateTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateTableViewController.swift; sourceTree = "<group>"; };
+		C4F0B58E22F956AE003DA14F /* AlertActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertActionSheet.swift; sourceTree = "<group>"; };
 		C4FEA2CA229652CA00DAC0AD /* AppTableViewLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTableViewLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4FEA2CD229652CA00DAC0AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4FEA2D2229652CA00DAC0AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,9 +85,17 @@
 		C4484E3122F08607004D8C5E /* State */ = {
 			isa = PBXGroup;
 			children = (
-				C4484E3222F08629004D8C5E /* StateViewController.swift */,
+				C4F0B58B22F812F6003DA14F /* StateTableViewController.swift */,
 			);
 			path = State;
+			sourceTree = "<group>";
+		};
+		C4F0B58D22F95693003DA14F /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				C4F0B58E22F956AE003DA14F /* AlertActionSheet.swift */,
+			);
+			path = Generic;
 			sourceTree = "<group>";
 		};
 		C4FEA2C1229652CA00DAC0AD = {
@@ -124,6 +136,7 @@
 			children = (
 				C4FEA2E52298300200DAC0AD /* OrderModel.swift */,
 				C43C428A22F4898E00EB888D /* OrderNumberModel.swift */,
+				C4F0B58922F756AF003DA14F /* StateModel.swift */,
 				C42C593322F2E9BE00BAC9E6 /* StorageMeneger.swift */,
 			);
 			path = Model;
@@ -140,6 +153,7 @@
 		C4FEA2E9229843DE00DAC0AD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C4F0B58D22F95693003DA14F /* Generic */,
 				C4484E3122F08607004D8C5E /* State */,
 				C4484E3022F085FD004D8C5E /* Orders */,
 			);
@@ -277,9 +291,11 @@
 				C4FEA2E62298300200DAC0AD /* OrderModel.swift in Sources */,
 				C4FEA2CE229652CA00DAC0AD /* AppDelegate.swift in Sources */,
 				C4FEA2E22296534200DAC0AD /* MainViewController.swift in Sources */,
-				C4484E3322F08629004D8C5E /* StateViewController.swift in Sources */,
+				C4F0B58A22F756AF003DA14F /* StateModel.swift in Sources */,
+				C4F0B58C22F812F7003DA14F /* StateTableViewController.swift in Sources */,
 				C42C593422F2E9BE00BAC9E6 /* StorageMeneger.swift in Sources */,
 				C4FEA2EB229843FB00DAC0AD /* NewOrderTableViewController.swift in Sources */,
+				C4F0B58F22F956AE003DA14F /* AlertActionSheet.swift in Sources */,
 				C43C428B22F4898E00EB888D /* OrderNumberModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

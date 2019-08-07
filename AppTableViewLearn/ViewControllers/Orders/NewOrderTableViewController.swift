@@ -25,6 +25,10 @@ class NewOrderTableViewController: UITableViewController {
                           "глянец, черная, серебро, 2в1",
                           "ребристая, черная, серебро",
                           "ребристая, черная, серебро, 2в1"]
+    private let costPrice1 = 390
+    private let costPrice2 = 510
+    private let costPrice3 = 370
+    private let costPrice4 = 500
     
     private let carBrands = ["Выберите марку авто:",
                              "Nissan",
@@ -47,8 +51,7 @@ class NewOrderTableViewController: UITableViewController {
                                    "CDEK",
                                    "Самовывоз"]
     
-    private let orderStatus = ["Выберите статус заказа:",
-                               "В процессе оформления",
+    private let orderStatus = ["В процессе оформления",
                                "На изготовлении",
                                "Изготовлен, ожидает оплату",
                                "Оплачен, ожидает отправку",
@@ -60,6 +63,7 @@ class NewOrderTableViewController: UITableViewController {
     var selectedPriorityCarBrends: String?
     var selectedPriorityDeliveryMethods: String?
     var selectedPriorityOrderStatus: String? = "В процессе оформления"
+    var selectedCostPrice: Int?
     var statusColor = "Green"
     
     // MARK: - Outlets
@@ -109,12 +113,57 @@ class NewOrderTableViewController: UITableViewController {
     
     @IBAction func setStatus(_ sender: UIButton) {
 
-        let dummy = UITextField(frame: CGRect.zero)
-        view.addSubview(dummy)
+//        let dummy = UITextField(frame: CGRect.zero)
+//        view.addSubview(dummy)
+//
+//        dummy.inputView = pickerView
+//        dummy.inputAccessoryView = toolBar
+//        dummy.becomeFirstResponder()
         
-        dummy.inputView = pickerView
-        dummy.inputAccessoryView = toolBar
-        dummy.becomeFirstResponder()
+        var actions: [(String, UIAlertAction.Style)] = []
+        actions.append(("В процессе оформления", UIAlertAction.Style.default))
+        actions.append(("На изготовлении", UIAlertAction.Style.default))
+        actions.append(("Изготовлен, ожидает оплату", UIAlertAction.Style.default))
+        actions.append(("Оплачен, ожидает отправку", UIAlertAction.Style.default))
+        actions.append(("Отправлен, клиент ждет трек", UIAlertAction.Style.default))
+        actions.append(("Выполнен", UIAlertAction.Style.default))
+        actions.append(("Отменен", UIAlertAction.Style.default))
+        actions.append(("Отмена", UIAlertAction.Style.cancel))
+        
+        //self = ViewController
+        Alerts.showActionSheet(viewController: self, title: "Выберите статус заказа:", message: nil, actions: actions) { (index) in
+            
+            if index != 7 {
+                self.selectedPriorityOrderStatus = self.orderStatus[index]
+            }
+            
+            self.statusButton.setTitle(self.selectedPriorityOrderStatus, for: .normal)
+
+            switch index {
+
+            case 1:
+                self.statusColor = "Red"
+            case 2:
+                self.statusColor = "Yellow"
+            case 3:
+                self.statusColor = "Red"
+                self.setsState()
+            case 4:
+                self.statusColor = "Yellow"
+                self.setsState()
+            case 5:
+                self.statusColor = "Blue"
+                self.setsState()
+            case 6:
+                self.statusColor = "Orange"
+                self.minusState()
+            case 7:
+                self.statusButton.setTitle(self.statusButton.titleLabel?.text, for: .normal)
+            default:
+                break
+            }
+            
+        }
         
     }
     
@@ -180,6 +229,8 @@ class NewOrderTableViewController: UITableViewController {
         
         let num = realm.objects(Number.self).first?.totalNumberOrders
         let number = num! + 1
+        
+        let status = statusButton.titleLabel?.text
 
         let imageData = image?.pngData()
         let newOrder = Order(coverName: coverName.text!, coverCircle: coverCircle.text!, coverRectangle: coverRectangle.text!, connection: connection.text!, fullName: fullName.text!, deliveryMethod: deliveryMethod.text!, address: address.text!, postcode: postcode.text!, comment: comment.text!, imageData: imageData, orderDate: orderDate.text!, orderNumber: orderNumber.text!, status: selectedPriorityOrderStatus!, orderPrice: orderPrice.text!, statusColor: statusColor)
@@ -200,7 +251,7 @@ class NewOrderTableViewController: UITableViewController {
                 
                 currentOrder?.comment = newOrder.comment
                 currentOrder?.imageData = newOrder.imageData
-                currentOrder?.status = newOrder.status
+                currentOrder?.status = status!
                 currentOrder?.orderPrice = newOrder.orderPrice
                 currentOrder?.statusColor = newOrder.statusColor
                 
@@ -287,7 +338,7 @@ class NewOrderTableViewController: UITableViewController {
         
         toolBar.sizeToFit()
         
-        let doneButton = UIBarButtonItem(title: "Выбрать", style: .done, target: self, action: #selector(dissmisKeyboard))
+        let doneButton = UIBarButtonItem(title: "Готово", style: .done, target: self, action: #selector(dissmisKeyboard))
         
         toolBar.setItems([doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
@@ -295,6 +346,7 @@ class NewOrderTableViewController: UITableViewController {
         coverName.inputAccessoryView = toolBar
         coverCircle.inputAccessoryView = toolBar
         deliveryMethod.inputAccessoryView = toolBar
+        postcode.inputAccessoryView = toolBar
         
     }
     
@@ -400,13 +452,9 @@ extension NewOrderTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
             
             return carBrands.count
             
-        } else if deliveryMethod.isEditing {
-            
-           return deliveryMethods.count
-            
         } else {
             
-            return orderStatus.count
+           return deliveryMethods.count
             
         }
         
@@ -422,13 +470,9 @@ extension NewOrderTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
             
             return carBrands[row]
             
-        } else if deliveryMethod.isEditing {
-            
-            return deliveryMethods[row]
-            
         } else {
             
-            return orderStatus[row]
+            return deliveryMethods[row]
             
         }
         
@@ -447,18 +491,22 @@ extension NewOrderTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
                 selectedPriorityCover = titles[row]
                 coverName.text = "Обложка для автодокументов \(selectedPriorityCover!)"
                 orderPrice.text = "1190₽"
+                selectedCostPrice = costPrice1
             case 2:
                 selectedPriorityCover = titles[row]
                 coverName.text = "Обложка для автодокументов \(selectedPriorityCover!)"
                 orderPrice.text = "1490₽"
+                selectedCostPrice = costPrice2
             case 3:
                 selectedPriorityCover = titles[row]
                 coverName.text = "Обложка для автодокументов \(selectedPriorityCover!)"
                 orderPrice.text = "1490₽"
+                selectedCostPrice = costPrice3
             case 4:
                 selectedPriorityCover = titles[row]
                 coverName.text = "Обложка для автодокументов \(selectedPriorityCover!)"
                 orderPrice.text = "1690₽"
+                selectedCostPrice = costPrice4
             default:
                 break
                 
@@ -476,26 +524,55 @@ extension NewOrderTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
             
         } else {
             
-            selectedPriorityOrderStatus = orderStatus[row]
-            statusButton.setTitle(selectedPriorityOrderStatus, for: .normal)
+            return
             
-            switch row {
-                
-            case 2:
-                statusColor = "Red"
-            case 3:
-                statusColor = "Yellow"
-            case 4:
-                statusColor = "Red"
-            case 5:
-                statusColor = "Yellow"
-            case 6:
-                statusColor = "Blue"
-            case 7:
-                statusColor = "Orange"
-            default:
-                break
+        }
+        
+    }
+    
+    private func setsState() {
+        
+        if selectedCostPrice != nil {
+            
+            let price = orderPrice.text
+            let priceInt = Int(price!.dropLast())
+            
+            let state = realm.objects(State.self).first
+            let progress = ((priceInt! - selectedCostPrice!) * 20) / 100
+            
+            try! realm.write {
+                state?.revenue += priceInt!
+                state?.costPrice += selectedCostPrice!
+                state?.progress += progress
+                state?.costs += selectedCostPrice! + progress
+                state?.profit += priceInt! - selectedCostPrice! - progress
             }
+            
+            NotificationCenter.default.post(name: .reload, object: nil)
+            
+        }
+        
+    }
+    
+    private func minusState() {
+        
+        if selectedCostPrice != nil {
+            
+            let price = orderPrice.text
+            let priceInt = Int(price!.dropLast())
+            
+            let state = realm.objects(State.self).first
+            let progress = ((priceInt! - selectedCostPrice!) * 20) / 100
+            
+            try! realm.write {
+                state?.revenue -= priceInt!
+                state?.costPrice -= selectedCostPrice!
+                state?.progress -= progress
+                state?.costs -= selectedCostPrice! + progress
+                state?.profit -= priceInt! - selectedCostPrice! - progress
+            }
+            
+            NotificationCenter.default.post(name: .reload, object: nil)
             
         }
         
